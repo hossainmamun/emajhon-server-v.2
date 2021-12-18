@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/', (req, res) => {
     const date = new Date()
-    res.send(`Hello Mamun Hossain to day is ${date}`)
+    res.send(`Hello Mamun Hossain today is ${date}`)
 })
 // mongodb connection
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
