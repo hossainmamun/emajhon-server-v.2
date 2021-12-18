@@ -62,7 +62,7 @@ client.connect(err => {
 });
 
 // ---- port connection -----
-const port = 4444;
+const port = process.env.PORT ||  4444;
 app.listen(port, () => {
     console.log(`port listen ${port}`)
 })
