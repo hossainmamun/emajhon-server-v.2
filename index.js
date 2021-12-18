@@ -42,28 +42,20 @@ client.connect(err => {
                 res.send(document)
             })
     })
-    // post method [post data to mongodb]
-    app.post('/addProduct', (req, res) => {
-        const product = req.body
-        productCollection.insertMany(product)
-            .then(result => {
-                console.log(result)
-                res.send(result)
-            })
-    })
+
     // post method [post order to database form client side shipment]
     app.post('/orders', (req, res) => {
         const order = req.body
         ordersCollection.insertOne(order)
-        .then(result => {
-            res.send(result)
-        })
+            .then(result => {
+                res.send(result)
+            })
     })
     console.log('database connect')
 });
 
 // ---- port connection -----
-const port = process.env.PORT ||  4444;
+const port = process.env.PORT || 4444;
 app.listen(port, () => {
     console.log(`port listen ${port}`)
 })
